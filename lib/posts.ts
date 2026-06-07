@@ -469,3 +469,112 @@ export function getPageBySlug(slug: string): Post | undefined {
 export function getAllPostSlugs(): string[] {
   return posts.map((p) => p.slug)
 }
+
+// ============================================================================
+// SANITY CMS INTEGRATION
+// ============================================================================
+// To use Sanity instead of static data:
+// 1. Set up a Sanity project at https://www.sanity.io/
+// 2. Add your project ID and dataset to .env.local
+// 3. Import content using the migration script (see README)
+// 4. Update the functions below to fetch from Sanity
+//
+// Example Sanity fetch functions (uncomment when ready):
+//
+// import { client } from '@/sanity/client'
+// import { postsQuery, postQuery, pagesQuery, pageQuery } from '@/sanity/lib/queries'
+// import { urlFor } from '@/sanity/lib/image'
+//
+// export async function fetchPostsFromSanity(): Promise<Post[]> {
+//   const sanityPosts = await client.fetch(postsQuery)
+//   return sanityPosts.map((post: any) => ({
+//     slug: post.slug,
+//     title: post.title,
+//     date: new Date(post.date).toLocaleDateString('en-US', {
+//       year: 'numeric',
+//       month: 'long',
+//       day: 'numeric',
+//     }),
+//     dateISO: post.date,
+//     excerpt: post.excerpt || '',
+//     content: post.content || '',
+//     featuredImage: post.featuredImage?.asset?.url ? {
+//       src: urlFor(post.featuredImage).width(800).url(),
+//       alt: post.featuredImage.alt || post.title,
+//       width: post.featuredImage.asset.metadata?.dimensions?.width || 800,
+//       height: post.featuredImage.asset.metadata?.dimensions?.height || 600,
+//     } : undefined,
+//     tags: post.tags || [],
+//     metaDescription: post.metaDescription || post.excerpt || '',
+//     type: 'post' as const,
+//   }))
+// }
+//
+// export async function fetchPostFromSanity(slug: string): Promise<Post | null> {
+//   const post = await client.fetch(postQuery, { slug })
+//   if (!post) return null
+//   return {
+//     slug: post.slug,
+//     title: post.title,
+//     date: new Date(post.date).toLocaleDateString('en-US', {
+//       year: 'numeric',
+//       month: 'long',
+//       day: 'numeric',
+//     }),
+//     dateISO: post.date,
+//     excerpt: post.excerpt || '',
+//     content: post.content || '',
+//     featuredImage: post.featuredImage?.asset?.url ? {
+//       src: urlFor(post.featuredImage).width(1010).url(),
+//       alt: post.featuredImage.alt || post.title,
+//       width: post.featuredImage.asset.metadata?.dimensions?.width || 1010,
+//       height: post.featuredImage.asset.metadata?.dimensions?.height || 600,
+//     } : undefined,
+//     tags: post.tags || [],
+//     metaDescription: post.metaDescription || post.excerpt || '',
+//     type: 'post' as const,
+//   }
+// }
+//
+// export async function fetchPagesFromSanity(): Promise<Post[]> {
+//   const sanityPages = await client.fetch(pagesQuery)
+//   return sanityPages.map((page: any) => ({
+//     slug: page.slug,
+//     title: page.title,
+//     date: '',
+//     dateISO: '',
+//     excerpt: '',
+//     content: page.content || '',
+//     featuredImage: page.featuredImage?.asset?.url ? {
+//       src: urlFor(page.featuredImage).width(800).url(),
+//       alt: page.featuredImage.alt || page.title,
+//       width: page.featuredImage.asset.metadata?.dimensions?.width || 800,
+//       height: page.featuredImage.asset.metadata?.dimensions?.height || 600,
+//     } : undefined,
+//     tags: [],
+//     metaDescription: page.metaDescription || '',
+//     type: 'page' as const,
+//   }))
+// }
+//
+// export async function fetchPageFromSanity(slug: string): Promise<Post | null> {
+//   const page = await client.fetch(pageQuery, { slug })
+//   if (!page) return null
+//   return {
+//     slug: page.slug,
+//     title: page.title,
+//     date: '',
+//     dateISO: '',
+//     excerpt: '',
+//     content: page.content || '',
+//     featuredImage: page.featuredImage?.asset?.url ? {
+//       src: urlFor(page.featuredImage).width(1010).url(),
+//       alt: page.featuredImage.alt || page.title,
+//       width: page.featuredImage.asset.metadata?.dimensions?.width || 1010,
+//       height: page.featuredImage.asset.metadata?.dimensions?.height || 600,
+//     } : undefined,
+//     tags: [],
+//     metaDescription: page.metaDescription || '',
+//     type: 'page' as const,
+//   }
+// }
