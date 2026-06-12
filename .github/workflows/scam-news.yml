@@ -1,0 +1,26 @@
+name: Daily Scam News Processing
+
+on:
+  schedule:
+    # Run daily at 9 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+
+jobs:
+  fetch-and-process:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Fetch and Process Scam News
+        run: |
+          # Fetch news
+          NEWS=$(curl -s "https://your-site.com/api/scam-news/fetch")
+          
+          # Process top 3 articles (as drafts for review)
+          curl -X POST "https://your-site.com/api/scam-news/process" \
+            -H "Content-Type: application/json" \
+            -d "{\"articles\": $(echo $NEWS | jq '.articles[:3]'), \"autoPublish\": false}"
+        env:
+          # Secrets needed for API authentication
+          API_SECRET: ${{ secrets.API_SECRET }}
