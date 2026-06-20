@@ -1,0 +1,31 @@
+[
+  {
+    "title": "&#8216;Popa&#8217; Botnet Linked to Publicly-Traded Israeli Firm",
+    "slug": "8216-popa-8217-botnet-linked-to-publicly-traded-israeli-firm",
+    "excerpt": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising f...",
+    "content": "<p><em>Originally reported by <a href=\"https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/\" target=\"_blank\" rel=\"noopener\">Krebs on Security</a></em></p>\n\nFor the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising fraud, account takeovers, and mass data-scraping efforts. This week, researchers from multiple security firms concluded that the Popa botnet is linked to NetNut, a \"residential proxy\" provider operated by the publicly-traded Israeli firm Alarum Technologies Ltd [NASDAQ: ALAR].\n\n<hr />\n<p><strong>Source:</strong> <a href=\"https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/\" target=\"_blank\" rel=\"noopener\">Krebs on Security</a></p>",
+    "metaDescription": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising f...",
+    "tags": [
+      "phishing",
+      "fraud"
+    ],
+    "source": "Krebs on Security",
+    "sourceUrl": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
+    "date": "2026-06-18",
+    "status": "draft"
+  },
+  {
+    "title": "Who Runs the Ransomware Group &#8216;The Gentlemen?&#8217;",
+    "slug": "who-runs-the-ransomware-group-8216-the-gentlemen-8217",
+    "excerpt": "A cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers t...",
+    "content": "<p><em>Originally reported by <a href=\"https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/\" target=\"_blank\" rel=\"noopener\">Krebs on Security</a></em></p>\n\nA cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers through an aggressive recruitment strategy that promises affiliates 90 percent of any ransom paid by victims. This post examines clues pointing to a real life identity for the administrator of The Gentlemen ransomware group.\n\n<hr />\n<p><strong>Source:</strong> <a href=\"https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/\" target=\"_blank\" rel=\"noopener\">Krebs on Security</a></p>",
+    "metaDescription": "A cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers t...",
+    "tags": [
+      "phishing"
+    ],
+    "source": "Krebs on Security",
+    "sourceUrl": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
+    "date": "2026-06-10",
+    "status": "draft"
+  }
+]

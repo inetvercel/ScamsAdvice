@@ -167,10 +167,6 @@ Using another person's real LinkedIn profile (they are posing as a real person w
 
 <p>Don't deal with the following if they contact you to place content. They do not pay and are scamming marketing from paying clients.</p>
 
-<figure>
-  <img src="/images/seo-scammers.jpg" alt="Person receiving fake SMS scam or phishing message on phone" width="1000" height="586" loading="lazy" />
-</figure>
-
 <h2>Latest Additions</h2>
 <ul>
   <li>charlotterusse795@gmail.com</li>

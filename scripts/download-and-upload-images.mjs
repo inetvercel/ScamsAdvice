@@ -18,37 +18,37 @@ const client = createClient({
   useCdn: false,
 })
 
-// Image mappings from WordPress to local
+// Image mappings from WordPress to local (verified URLs from live site)
 const imagesToDownload = [
   {
-    url: 'https://scamsadvice.com/wp-content/uploads/2019/06/google-ads-freelancer-1.png',
+    url: 'https://scamsadvice.com/wp-content/uploads/2019/06/2019-06-14_23h43_59.png',
     filename: 'google-ads-freelancer-1.png',
     postSlug: 'google-ads-dont-become-a-victim-of-fraud',
     alt: 'Google Ads fraud scam evidence on Freelancer.com'
   },
   {
-    url: 'https://scamsadvice.com/wp-content/uploads/2020/03/middleman-scam.png',
-    filename: 'middleman-scam.png',
-    postSlug: 'usernames-and-emails-relating-to-scams',
-    alt: 'Middle man marketing scam evidence'
+    url: 'https://scamsadvice.com/wp-content/uploads/2019/06/2019-06-14_23h41_53.png',
+    filename: 'google-ads-freelancer-2.png',
+    postSlug: null, // inline image only
+    alt: 'Freelancer.com profile of scammer seosea01'
   },
   {
-    url: 'https://scamsadvice.com/wp-content/uploads/2023/07/seo-scammers.jpg',
+    url: 'https://scamsadvice.com/wp-content/uploads/2019/06/2019-06-14_23h42_54.png',
+    filename: 'google-ads-freelancer-3.png',
+    postSlug: null, // inline image only
+    alt: 'Additional evidence of Google Ads account fraud'
+  },
+  {
+    url: 'https://scamsadvice.com/wp-content/uploads/2023/07/scammers-1000x576.jpg',
     filename: 'seo-scammers.jpg',
     postSlug: 'list-of-different-seo-scammers-email',
     alt: 'SEO scammers targeting website owners'
   },
   {
-    url: 'https://scamsadvice.com/wp-content/uploads/2021/01/zerogpt-fraud.jpg',
-    filename: 'zerogpt-fraud.jpg',
+    url: 'https://scamsadvice.com/wp-content/uploads/2023/07/2023-07-29_16h40_24-1024x62.png',
+    filename: 'zerogpt-fraud-email.png',
     postSlug: 'www-zerogpt-com-fraud-links',
     alt: 'ZeroGPT fraud evidence'
-  },
-  {
-    url: 'https://scamsadvice.com/wp-content/uploads/2021/01/react-org-scam.jpg',
-    filename: 'react-org-scam.jpg',
-    postSlug: 'react-org-the-ugly-side',
-    alt: 'React.org scam evidence'
   }
 ]
 
@@ -110,8 +110,10 @@ async function main() {
     const imageDoc = await uploadToSanity(filepath, img.alt)
     if (!imageDoc) continue
     
-    // Update post
-    await updatePostWithImage(img.postSlug, imageDoc)
+    // Update post (only if postSlug is specified - some images are inline only)
+    if (img.postSlug) {
+      await updatePostWithImage(img.postSlug, imageDoc)
+    }
   }
   
   console.log('\nDone!')
